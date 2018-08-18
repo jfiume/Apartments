@@ -23,42 +23,42 @@ export const startLoadingApartments = () => ({
   type: START_LOADING_APARTMENTS
 });
 
-export const fetchApartments = () => dispatch => (
+export const fetchApartments = () => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartments());
   apartmentUtil.fetchApartments().then(apartments => (
     dispatch(receiveApartments(apartments))
   ))
-);
+};
 
-export const fetchApartment = (id) => dispatch => (
+export const fetchApartment = (id) => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartment());
   apartmentUtil.fetchApartment(id).then(apartment => (
     dispatch(receiveApartments(apartment))
   ))
-);
+};
 
-export const updateApartment = (id) => dispatch => (
+export const updateApartment = (id) => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartment());
   apartmentUtil.updateApartment(id).then(apartment => (
     dispatch(receiveApartment(apartment))
   ))
-);
+};
 
-export const createApartment = (apartment) => dispatch => (
+export const createApartment = (apartment) => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartment());
   apartmentUtil.createApartment(apartment).then(apartment => (
     dispatch(receiveApartment(apartment))
   ))
-);
+};
 
-export const searchApartment = (query) => dispatch => (
+export const searchApartments = (query) => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartments());
-  apartmentUtil.searchApartment(query).then(apartments => (
+  apartmentUtil.searchApartments(query).then(apartments => (
     dispatch(receiveApartments())
   ))
-);
+};
