@@ -4,7 +4,7 @@ import ApartmentReducer from './apartment_reducer';
 import loadingReducer from './loading_reducer';
 
 const RootReducer = combineReducers({
-  apartment: ApartmentReducer,
+  apartments: ApartmentReducer,
   loadingStatus: loadingReducer
 });
 
