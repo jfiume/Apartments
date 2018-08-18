@@ -20,7 +20,7 @@ export const fetchApartment = async function(id) {
   }
 };
 
-// Asynchronously updae a single apartment
+// Asynchronously update a single apartment
 export const updateApartment = async function(id) {
   try {
     const settings = {
@@ -37,3 +37,41 @@ export const updateApartment = async function(id) {
     console.error("API request raised an error:", e);
   }
 };
+
+// Asynchronously create a single apartment
+export const createApartment = async function(apartment) {
+  try {
+    const settings = {
+      method: 'POST',
+      body: JSON.stringify(apartment),
+      headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      };
+    const response = await fetch("/apartments/", settings);
+    const apartment = await response.json();
+    return apartment;
+  } catch (e) {
+    console.error("API request raised an error:", e);
+  }
+};
+
+export const searchApartments = async function(query) {
+  try {
+    const settings = {
+      method: 'GET',
+      body: JSON.stringify(query),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    };
+    const response = await fetch("apartments/search", settings);
+    const apartments = await response.json();
+    return apartments;
+  } catch (e) {
+    console.error("API request raised an error:", e);
+  }
+
+}
