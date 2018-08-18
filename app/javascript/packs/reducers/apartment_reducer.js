@@ -5,7 +5,7 @@ import {
 
 const ApartmentReducer = (state = {}, action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_APARTMENT:
       const newApartment = action.apartment;
       return Object.assign({}, newApartment);
@@ -15,3 +15,5 @@ const ApartmentReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default ApartmentReducer;
