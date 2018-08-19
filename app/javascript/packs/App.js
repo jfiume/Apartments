@@ -1,23 +1,26 @@
 import React, { Component } from "react";
 import ApartmentIndex from './components/apartment_index';
+import ApartmentShow from './components/apartment_show';
+
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter,
+} from 'react-router-dom'
 
 class App extends Component {
-  async getApartments() {
-    try {
-      const response = await fetch("/apartments");
-      const apartments = await response.json();
-      console.log(apartments);
-    } catch (e) {
-      console.error("API request raised an error:", e);
-    }
-  };
-  componentDidMount() {
-    // this.getApartments();
-  }
   render() {
     return (
       <div className="App">
-        <ApartmentIndex />
+        <header>
+
+        </header>
+        <Switch>
+          <Route path="/:id" component={ApartmentShow} />
+          <Route path="/" component={ApartmentIndex} />
+        </Switch>
       </div>
     );
   }

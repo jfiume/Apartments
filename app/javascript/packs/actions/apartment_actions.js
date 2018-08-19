@@ -35,7 +35,7 @@ export const fetchApartment = (id) => dispatch => {
   // Signal that we are starting our async call
   dispatch(startLoadingApartment());
   apartmentUtil.fetchApartment(id).then(apartment => (
-    dispatch(receiveApartments(apartment))
+    dispatch(receiveApartment(apartment))
   ))
 };
 
