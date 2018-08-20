@@ -18,9 +18,9 @@ class ApartmentIndex extends Component {
     if (!loadingApartments && Object.values(this.props.apartments).length > 0) {
       const apartments = Object.values(this.props.apartments);
       return (
-        <div>
+        <ul>
           {apartments.map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
-        </div>
+        </ul>
       )
     } else {
       return (

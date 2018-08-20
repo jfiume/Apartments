@@ -21,10 +21,11 @@ export const fetchApartment = async function(id) {
 };
 
 // Asynchronously update a single apartment
-export const updateApartment = async function(id) {
+export const updateApartment = async function(id, currentApartment) {
   try {
     const settings = {
-      method: 'PUT',
+      method: 'PATCH',
+      body: JSON.stringify(currentApartment),
       headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -39,11 +40,11 @@ export const updateApartment = async function(id) {
 };
 
 // Asynchronously create a single apartment
-export const createApartment = async function(apartment) {
+export const createApartment = async function(newApartment) {
   try {
     const settings = {
       method: 'POST',
-      body: JSON.stringify(apartment),
+      body: JSON.stringify(newApartment),
       headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',

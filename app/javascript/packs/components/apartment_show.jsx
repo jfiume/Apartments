@@ -8,6 +8,7 @@ class ApartmentShow extends Component {
   constructor(props) {
     super(props);
 
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -20,11 +21,18 @@ class ApartmentShow extends Component {
     }
   }
 
+  handleEdit(e) {
+    e.preventDefault;
+    const apartment = this.props.currentApartment;
+    this.props.history.push(`/${apartment.id}/edit`)
+  }
+
   render() {
-    if (Object.values(this.props.currentApartment).length > 0) {
+    const loadingApartment = this.props.loadingStatus.loadingApartment;
+    if (!loadingApartment && Object.values(this.props.currentApartment).length > 0) {
       const apartment = this.props.currentApartment;
       return (
-        <div>
+        <section>
           <span>
             {apartment.address}
           </span>
@@ -40,7 +48,8 @@ class ApartmentShow extends Component {
           <span>
             {apartment.bathroom_count}
           </span>
-        </div>
+          <button onClick={this.handleEdit}>edit</button>
+        </section>
       )
     } else {
       return (
@@ -53,6 +62,7 @@ class ApartmentShow extends Component {
 const mapStateToProps = ({ apartments, loadingStatus }) => {
   return {
     currentApartment: apartments,
+    loadingStatus
   };
 };
 

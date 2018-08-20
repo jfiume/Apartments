@@ -11,7 +11,6 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1.json
   def show
     @apartment = Apartment.find(params[:id])
-    render "apartments/show"
   end
 
   # GET /apartments/new
@@ -71,6 +70,6 @@ class ApartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apartment_params
-      params.fetch(:apartment, {})
+      params.require(:apartment).permit(:address, :city, :state, :bedroom_count, :bathroom_count)
     end
 end
