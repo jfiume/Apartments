@@ -22,14 +22,13 @@ class EditApartment extends Component {
   handleSubmit(e) {
     e.preventDefault;
     const apartment = {apartment: this.state}
-    const id = this.props.match.params.id
+    const id = this.props.match.params.id;
     this.props.updateApartment(id, apartment);
   }
 
   componentDidUpdate(prevProps) {
-    const loading = this.props.loadingStatus.startLoadingApartment
-    if (!loading && prevProps.currentApartment !== this.props.currentApartment) {
-      this.props.history.push(`/${this.props.currentApartment.id}`)
+    if (prevProps.currentApartment !== this.props.currentApartment) {
+      this.props.history.push(`${this.props.currentApartment.id}`);
     }
   }
 

@@ -25,9 +25,8 @@ class CreateApartment extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const loading = this.props.loadingStatus.startLoadingApartment
-    if (!loading && prevProps.currentApartment !== this.props.currentApartment) {
-      this.props.history.push('/')
+    if (prevProps.apartments !== this.props.apartments) {
+      this.props.history.push(`${this.props.apartments.id}`);
     }
   }
 
@@ -79,7 +78,7 @@ class CreateApartment extends Component {
 
 const mapStateToProps = ({ apartments, loadingStatus }) => {
   return {
-    loadingStatus
+    apartments
   };
 };
 
