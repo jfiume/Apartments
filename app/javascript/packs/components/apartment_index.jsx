@@ -16,10 +16,10 @@ class ApartmentIndex extends Component {
   render() {
     const loadingApartments = this.props.loadingStatus.loadingApartments;
     if (!loadingApartments && Object.values(this.props.apartments).length > 0) {
-      const apartments = Object.values(this.props.apartments);
+      const apartments = this.props.apartments;
       return (
         <ul>
-          {apartments.map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
+          {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
         </ul>
       )
     } else {

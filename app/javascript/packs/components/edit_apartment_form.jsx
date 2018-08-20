@@ -28,7 +28,7 @@ class EditApartment extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.currentApartment !== this.props.currentApartment) {
-      this.props.history.push(`${this.props.currentApartment.id}`);
+      this.props.history.push(`/${this.props.currentApartment.id}`);
     }
   }
 
@@ -83,8 +83,7 @@ class EditApartment extends Component {
 
 const mapStateToProps = ({ apartments, loadingStatus }) => {
   return {
-    currentApartment: apartments,
-    loadingStatus
+    currentApartment: apartments
   };
 };
 

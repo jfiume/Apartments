@@ -26,7 +26,7 @@ class CreateApartment extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.apartments !== this.props.apartments) {
-      this.props.history.push(`${this.props.apartments.id}`);
+      this.props.history.push(`/${this.props.apartments.id}`);
     }
   }
 
