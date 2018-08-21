@@ -42,9 +42,9 @@ class ApartmentIndex extends Component {
 
   renderFilterButtons() {
     return (
-      <section>
+      <section className="buttons">
         <button id='new' onClick={this.newApartment}>Create New Apartment</button>
-        <label className="filter"> Bedrooms <br />
+        <label className="filter"> Bedrooms:
           <select onChange={(e) => this.handleBeds(e)}>
             <option value='0'>Any</option>
             <option value='1'>1+</option>
@@ -54,7 +54,7 @@ class ApartmentIndex extends Component {
             <option value='5'>5+</option>
           </select>
         </label>
-        <label className="filter"> Bathrooms <br />
+        <label className="filter"> Bathrooms:
           <select onChange={(e) => this.handleBaths(e)}>
             <option value='0'>Any</option>
             <option value='1'>1+</option>

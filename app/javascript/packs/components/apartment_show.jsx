@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   fetchApartment
 } from '../actions/apartment_actions';
+import { Link } from 'react-router-dom';
 
 class ApartmentShow extends Component {
   constructor(props) {
@@ -32,24 +33,27 @@ class ApartmentShow extends Component {
     if (!loadingApartment && Object.values(this.props.currentApartment).length > 0) {
       const apartment = this.props.currentApartment;
       return (
-        <section>
-          <span>
-            {apartment.address}
-          </span>
-          <span>
-            {apartment.city}
-          </span>
-          <span>
-            {apartment.state}
-          </span>
-          <span>
-            {apartment.bedroom_count}
-          </span>
-          <span>
-            {apartment.bathroom_count}
-          </span>
-          <button onClick={this.handleEdit}>edit</button>
-        </section>
+        <div className="show">
+          <Link to="/" className="home">Home</Link>
+          <section>
+            <span>
+              {apartment.address}
+            </span>
+            <span>
+              {apartment.city}
+            </span>
+            <span>
+              {apartment.state}
+            </span>
+            <span>
+              beds: {apartment.bedroom_count}
+            </span>
+            <span>
+              baths: {apartment.bathroom_count}
+            </span>
+            <button onClick={this.handleEdit}>edit</button>
+          </section>
+        </div>
       )
     } else {
       return (
