@@ -6,14 +6,17 @@ import { filterAll } from '../reducers/selectors';
 import ApartmentDetail from './apartment_detail';
 
 class ApartmentIndex extends Component {
-  constructor(props) {
+  constructor(props, filteredApartments=[]) {
     super(props);
+    this.filteredApartments = filteredApartments;
     this.state = {
-      'beds': '100',
-      'baths': '100'
+      'beds': '0',
+      'baths': '0'
     }
     this.newApartment = this.newApartment.bind(this);
-    this.handleFilter = this.handleFilter.bind(this);
+    this.handleBeds = this.handleBeds.bind(this);
+    this.handleBaths = this.handleBaths.bind(this);
+    this.renderFilterButtons = this.renderFilterButtons.bind(this);
   }
 
   componentDidMount() {
@@ -24,19 +27,25 @@ class ApartmentIndex extends Component {
     this.props.history.push('/new');
   }
 
-  handleFilter(room, e) {
-    this.setState({
-      [room]: e.target.value
-    });
-
+  handleBeds(e) {
+    this.state.beds = e.target.value;
+    this.props.filterApartments();
+    this.filteredApartments = this.props.filterAll(this.state.beds, this.state.baths, this.props.apartments);
   }
+
+  handleBaths(e) {
+    this.state.baths = e.target.value
+    this.props.filterApartments();
+    this.filteredApartments = this.props.filterAll(this.state.beds, this.state.baths, this.props.apartments);
+  }
+
 
   renderFilterButtons() {
     return (
       <section>
         <button id='new' onClick={this.newApartment}>Create New Apartment</button>
         <label className="filter"> Bedrooms <br />
-          <select onChange={(e) => this.handleFilter('beds', e)}>
+          <select onChange={(e) => this.handleBeds(e)}>
             <option value='0'>Any</option>
             <option value='1'>1+</option>
             <option value='2'>2+</option>
@@ -46,7 +55,7 @@ class ApartmentIndex extends Component {
           </select>
         </label>
         <label className="filter"> Bathrooms <br />
-          <select onChange={(e) => this.handleFilter('baths', e)}>
+          <select onChange={(e) => this.handleBaths(e)}>
             <option value='0'>Any</option>
             <option value='1'>1+</option>
             <option value='2'>2+</option>
@@ -63,14 +72,26 @@ class ApartmentIndex extends Component {
     const loadingApartments = this.props.loadingStatus.loadingApartments;
     if (!loadingApartments && Object.values(this.props.apartments).length > 0) {
       const apartments = this.props.apartments;
-      return (
-        <section>
-          {this.renderFilterButtons()}
-          <ul>
-            {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
-          </ul>
-      </section>
-      )
+      const filtered = this.props.filtered.filtered;
+      if (filtered) {
+        return (
+          <section>
+            {this.renderFilterButtons()}
+            <ul>
+              {Object.values(this.filteredApartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
+            </ul>
+          </section>
+        )
+      } else {
+        return (
+          <section>
+            {this.renderFilterButtons()}
+            <ul>
+              {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
+            </ul>
+        </section>
+        )
+      }
     } else {
       return (
         <div>loading</div>
@@ -79,11 +100,12 @@ class ApartmentIndex extends Component {
   }
 }
 
-const mapStateToProps = ({ apartments, loadingStatus }) => {
+const mapStateToProps = ({ apartments, loadingStatus, filtered }) => {
   return {
     apartments,
     loadingStatus,
-    filtered: filterAll(100, 100, apartments)
+    filtered,
+    filterAll
   };
 };
 

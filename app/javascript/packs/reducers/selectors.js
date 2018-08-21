@@ -14,7 +14,7 @@ export const filterAll = (beds, baths, apartments) => {
     apartment => {
       return apartment.bathroom_count >= baths
     }).filter(apartment => {
-      return bedroom_count >= beds
+      return apartment.bedroom_count >= beds
     });
   return filteredApartments;
 };
