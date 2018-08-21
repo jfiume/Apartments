@@ -13,9 +13,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-
-        </header>
         <Switch>
           <Route path="/new" component={ApartmentCreate} />
           <Route path="/:id/edit" component={ApartmentEdit} />

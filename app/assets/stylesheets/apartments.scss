@@ -1,3 +1,17 @@
 // Place all the styles related to the Apartments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#new {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10%;
+}
+
+.filter {
+  position: relative;
+  float: left;
+}
+
+li {
+  text-decoration: none;
+}
