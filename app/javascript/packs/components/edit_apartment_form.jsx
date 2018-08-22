@@ -27,6 +27,7 @@ class EditApartment extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // we have to call a rerender when we finished editing the apartment. Then we push to the show page.
     if (prevProps.currentApartment !== this.props.currentApartment) {
       this.props.history.push(`/${this.props.currentApartment.id}`);
     }

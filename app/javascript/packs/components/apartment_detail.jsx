@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class ApartmentDetail extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -41,9 +40,7 @@ const mapStateToProps = (ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  };
+  return {};
 };
 
 export default connect(

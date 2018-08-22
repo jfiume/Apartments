@@ -28,6 +28,7 @@ class ApartmentIndex extends Component {
     this.props.history.push('/new');
   }
 
+// I split up the bed and bath hangler to be more precise on calling the filter selector
   handleBeds(e) {
     this.state.beds = e.target.value;
     this.props.filterApartments();

@@ -5,10 +5,11 @@ By Joe Fiume
 
 ## Instructions
 
-1. Install Gemfile dependencies with "bundle install"
-2. run "rails s" to start the rails server
-3. run "ruby ./bin/webpack-dev-server" to start the built in rails webpack
-4. Enjoy!
+1. run git clone "https://github.com/jfiume/Apartments.git"
+2. Install Gemfile dependencies with "bundle install"
+3. run "rails s" to start the rails server
+4. run "ruby ./bin/webpack-dev-server" to start the built in rails webpack
+5. Enjoy!
 
 ## Discussion
 * I used the following technologies: Rails, Sqlite3, React and Redux.

@@ -16,12 +16,6 @@ class ApartmentShow extends Component {
     this.props.fetchApartment(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.match.params.id !== this.props.match.params.id) {
-      this.props.fetchApartment(nextProps.match.params.id);
-    }
-  }
-
   handleEdit(e) {
     e.preventDefault;
     const apartment = this.props.currentApartment;
