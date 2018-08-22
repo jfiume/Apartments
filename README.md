@@ -1,24 +1,30 @@
-# README
+# Apartments for Rent
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+By Joe Fiume  
+[jfiume.github.io](http://https://github.com/jfiume)
 
-Things you may want to cover:
+## Instructions
 
-* Ruby version
+1. Install Gemfile dependencies with "bundle install"
+2. run "rails s" to start the rails server
+3. run "ruby ./bin/webpack-dev-server" to start the built in rails webpack
+4. Enjoy!
 
-* System dependencies
+## Discussion
+* I used the following technologies: Rails, Sqlite3, React and Redux.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Requirements
+#### Build the Apartments for Rent App
+The application should:
+* Be backed by a sqlite3 database, see: https://guides.rubyonrails.org/getting_started.html
+* Use a front-end framework like React or Angular. Rails 5.1 comes with the Webpacker
+gem installed, please use this to manage the JavaScript framework
+(https://github.com/rails/webpacker)
+* Store "Apartment" objects with the following attributes: address, city, state, bedroom
+count, and bathroom count. You should do this by using the ‘rails generate scaffold’
+command
+* The ability for users to create, view, and edit apartments
+* Have a search index page displaying the existing apartments along with the ability to
+filter the apartment based on bedroom and bathroom counts
+* Serve a robots file
+* Serve a sitemap file

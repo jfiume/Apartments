@@ -54,11 +54,3 @@ export const createApartment = (apartment) => dispatch => {
     dispatch(receiveApartment(apartment))
   ))
 };
-
-export const searchApartments = (query) => dispatch => {
-  // Signal that we are starting our async call
-  dispatch(startLoadingApartments());
-  apartmentUtil.searchApartments(query).then(apartments => (
-    dispatch(receiveApartments())
-  ))
-};

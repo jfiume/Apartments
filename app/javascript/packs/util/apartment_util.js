@@ -57,22 +57,3 @@ export const createApartment = async function(newApartment) {
     console.error("API request raised an error:", e);
   }
 };
-
-export const searchApartments = async function(query) {
-  try {
-    const settings = {
-      method: 'GET',
-      body: JSON.stringify(query),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    };
-    const response = await fetch("apartments/search", settings);
-    const apartments = await response.json();
-    return apartments;
-  } catch (e) {
-    console.error("API request raised an error:", e);
-  }
-
-}
