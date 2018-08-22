@@ -67,12 +67,14 @@ class EditApartment extends Component {
         <input type="number"
           value={this.state.bedroom_count}
           onChange={this.update('bedroom_count')}
+          placeholder={this.props.currentApartment.bedroom_count}
         />
         </label>
         <label> bathrooms <br/>
         <input type="number"
           value={this.state.bathroom_count}
           onChange={this.update('bathroom_count')}
+          placeholder={this.props.currentApartment.bathroom_count}
         />
         </label>
         <button onClick={this.handleSubmit}>Submit</button>

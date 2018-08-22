@@ -47,7 +47,7 @@ a span {
   margin-left: -100%;
   margin-right: -100%;
   margin-top: -10%;
-  padding-top: 5%;
+  padding-top: 10%;
   font-size: 1.2em;
 }
 
@@ -99,6 +99,7 @@ form label{
 
 form button {
   padding: 10px 50px;
+  margin-top: 10px;
 }
 
 form {
@@ -107,4 +108,16 @@ form {
 
 h1, h2 {
   color: #FFFFFF;
+}
+
+section span {
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  font-size: 1.1em;
 }

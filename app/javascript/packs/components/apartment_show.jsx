@@ -40,7 +40,7 @@ class ApartmentShow extends Component {
               {apartment.address}
             </span>
             <span>
-              {apartment.city}
+              {apartment.city},
             </span>
             <span>
               {apartment.state}

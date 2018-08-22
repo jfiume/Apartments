@@ -17,6 +17,7 @@ class ApartmentIndex extends Component {
     this.handleBeds = this.handleBeds.bind(this);
     this.handleBaths = this.handleBaths.bind(this);
     this.renderFilterButtons = this.renderFilterButtons.bind(this);
+    this.renderSearchIndex = this.renderSearchIndex.bind(this);
   }
 
   componentDidMount() {
@@ -68,6 +69,21 @@ class ApartmentIndex extends Component {
     )
   }
 
+  renderSearchIndex(apartments) {
+    return (
+      <div>
+        <h1>Apartments for Rent</h1>
+        <h2>Free Apartment Finder</h2>
+        <section>
+          {this.renderFilterButtons()}
+          <ul>
+            {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
+          </ul>
+        </section>
+      </div>
+    )
+  }
+
   render() {
     const loadingApartments = this.props.loadingStatus.loadingApartments;
     if (!loadingApartments && Object.values(this.props.apartments).length > 0) {
@@ -75,25 +91,15 @@ class ApartmentIndex extends Component {
       const filtered = this.props.filtered.filtered;
       if (filtered) {
         return (
-          <section>
-            {this.renderFilterButtons()}
-            <ul>
-              {Object.values(this.filteredApartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
-            </ul>
-          </section>
+          <div>
+            {this.renderSearchIndex(this.filteredApartments)}
+          </div>
         )
       } else {
         return (
           <div>
-            <h1>Apartments for Rent</h1>
-            <h2>Free Apartment Finder</h2>
-          <section>
-            {this.renderFilterButtons()}
-            <ul>
-              {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
-            </ul>
-        </section>
-      </div>
+            {this.renderSearchIndex(apartments)}
+          </div>
         )
       }
     } else {

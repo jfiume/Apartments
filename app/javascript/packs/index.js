@@ -4,11 +4,12 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { HashRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// Comment out logger when not debugging
+// import logger from 'redux-logger';
 
 import RootReducer from "./reducers/root_reducer";
 import App from "./App";
-const store = createStore(RootReducer, applyMiddleware(thunk, logger));
+const store = createStore(RootReducer, applyMiddleware(thunk));
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
