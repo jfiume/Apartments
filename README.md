@@ -13,6 +13,9 @@ By Joe Fiume
 
 ## Discussion
 * I used the following technologies: Rails, Sqlite3, React and Redux.
+* robots file can be found here: [robots](https://github.com/jfiume/Apartments/blob/master/public/robots.txt)
+* sitemap can be found here: [sitemap](https://github.com/jfiume/Apartments/blob/master/public/sitemap.xml)
+* Link Flow Diagram can be found here: [link flow diagram](https://github.com/jfiume/Apartments/blob/master/public/Link%20Flow%20Apartments.png)
 
 ## Requirements
 #### Build the Apartments for Rent App
@@ -29,3 +32,4 @@ command
 filter the apartment based on bedroom and bathroom counts
 * Serve a robots file
 * Serve a sitemap file
+* create a diagram that shows the link flow of your application

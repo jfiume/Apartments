@@ -33,6 +33,12 @@ class EditApartment extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      this.props.fetchApartment(nextProps.match.params.id);
+    }
+  }
+
   update(field) {
       return e => this.setState({
         [field]: e.currentTarget.value
