@@ -13,7 +13,7 @@
 }
 
 a {
-  padding: 20px;
+  padding: 20px 100px;
   text-decoration: none;
 }
 
@@ -27,12 +27,9 @@ li {
 }
 
 a span {
-  padding: 15px;
-  text-align: center;
-}
-
-div span {
   padding: 2px;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 #headers {
@@ -49,13 +46,15 @@ div span {
   padding: 10px;
   margin-left: -100%;
   margin-right: -100%;
-  margin-top: -5%;
-  padding-top: 3%;
+  margin-top: -10%;
+  padding-top: 5%;
+  font-size: 1.2em;
 }
 
 button, select {
   background-color: #A8312D;
   color: #FFFFFF;
+  font-size: 1.1em;
 }
 
 label {
@@ -102,4 +101,8 @@ form button {
 
 form {
   font-size: 1.3em;
+}
+
+h1, h2 {
+  color: #FFFFFF;
 }

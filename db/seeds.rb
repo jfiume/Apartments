@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Apartment.destroy_all
 apartment_1 = Apartment.create(
-  address: '123 Abc',
+  address: '123 Abc St.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 2,
@@ -15,7 +15,7 @@ apartment_1 = Apartment.create(
 )
 
 apartment_2 = Apartment.create(
-  address: '321 Cba',
+  address: '321 Cba Way.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 1,
@@ -23,7 +23,7 @@ apartment_2 = Apartment.create(
 )
 
 apartment_3 = Apartment.create(
-  address: '456 Zyx',
+  address: '456 Zyx Dr.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 2,
@@ -31,7 +31,7 @@ apartment_3 = Apartment.create(
 )
 
 apartment_4 = Apartment.create(
-  address: '654 Xyz',
+  address: '654 Xyz Ct.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 2,
@@ -39,7 +39,7 @@ apartment_4 = Apartment.create(
 )
 
 apartment_5 = Apartment.create(
-  address: '789 Def',
+  address: '789 Def St.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 4,
@@ -47,7 +47,7 @@ apartment_5 = Apartment.create(
 )
 
 apartment_6 = Apartment.create(
-  address: '987 Fed',
+  address: '987 Fed Way.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 3,
@@ -55,7 +55,7 @@ apartment_6 = Apartment.create(
 )
 
 apartment_7 = Apartment.create(
-  address: '1 Ghi',
+  address: '1 Ghi Dr.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 3,
@@ -63,7 +63,7 @@ apartment_7 = Apartment.create(
 )
 
 apartment_8 = Apartment.create(
-  address: '2 Jkl',
+  address: '2 Jkl Ct.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 3,
@@ -71,7 +71,7 @@ apartment_8 = Apartment.create(
 )
 
 apartment_9 = Apartment.create(
-  address: '3 Mno',
+  address: '3 Mno Ave.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 3,
@@ -79,7 +79,7 @@ apartment_9 = Apartment.create(
 )
 
 apartment_10 = Apartment.create(
-  address: '4 Pqr',
+  address: '4 Pqr Ave.',
   city: 'Madison',
   state: 'Wi',
   bedroom_count: 2,

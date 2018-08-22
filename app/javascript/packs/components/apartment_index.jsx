@@ -84,12 +84,16 @@ class ApartmentIndex extends Component {
         )
       } else {
         return (
+          <div>
+            <h1>Apartments for Rent</h1>
+            <h2>Free Apartment Finder</h2>
           <section>
             {this.renderFilterButtons()}
             <ul>
               {Object.values(apartments).map(apartment => <ApartmentDetail key={apartment.id} apartment={apartment} />)}
             </ul>
         </section>
+      </div>
         )
       }
     } else {
